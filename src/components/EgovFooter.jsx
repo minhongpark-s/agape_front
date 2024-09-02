@@ -13,10 +13,8 @@ function EgovFooter() {
                 </h1>
                 <div className="info">
                     <p>
-                        대표문의메일 : egovframeexample@gmail.com  <span className="m_hide">|</span><br className="m_show" />  대표전화 : 0000-0000 (000-0000-0000)<br />
-                        호환성확인 : 000-0000-0000  |  교육문의 : 0000-0000-0000
+                        대표문의메일 : myk0584@daum.net  <span className="m_hide">|</span><br className="m_show" />  대표전화 : 031-417-8122
                     </p>
-                    <p className="copy">Copyright © 2021 Ministry Of The Interior And Safety. All Rights Reserved.</p>
                 </div>
                 <div className="right_col">
                     <Link to="">

@@ -102,7 +102,7 @@ function EgovMain(props) {
             <div className="c_wrap">
                 <div className="colbox">
                     <div className="left_col">
-                        <img src="/assets/images/img_simple_main.png" alt="단순 홈페이지 전자정부 표준프레임워크의 경량환경 내부업무에 대한 최신 정보와 기술을 제공하고 있습니다." />
+                        <img src="/assets/images/img_simple_main.png" alt="아름다운 세상 법인 전자정부 표준프레임워크의 경량환경 내부업무에 대한 최신 정보와 기술을 제공하고 있습니다." />
                     </div>
 
                     <div className="right_col">
@@ -136,8 +136,8 @@ function EgovMain(props) {
                                 <span>다양한 자료를<br />다운로드 받으실 수 있습니다.</span>
                             </Link>
                             <Link to={URL.ABOUT} className="bn2">
-                                <strong>표준프레임워크센터</strong>
-                                <span>표준프레임워크센터의<br />약도 등의 정보를 제공합니다.</span>
+                                <strong>아가페지역아동센터</strong>
+                                <span>아가페지역아동센터의<br />약도 등의 정보를 제공합니다.</span>
                             </Link>
                         </div>
                     </div>
@@ -147,7 +147,7 @@ function EgovMain(props) {
                     <div className="b1">
                         <div>
                             <h2>주요사업 소개</h2>
-                            <p>표준프레임워크가 제공하는<br />
+                            <p>아름다운 세상 협동조합이 제공하는<br />
                                 주요 사업을 소개합니다.</p>
                         </div>
                         <Link to={URL.INTRO_WORKS}>자세히 보기</Link>
@@ -155,26 +155,25 @@ function EgovMain(props) {
                     <div className="b2">
                         <div>
                             <h2>대표서비스 소개</h2>
-                            <p>표준프레임워크 실행환경의<br />
-                                서비스 그룹에서 제공하는<br />
-                                대표서비스입니다.</p>
+                            <p>아가페 지역 아동센터에서<br />
+                                제공하는 서비스들입니다.</p>
                         </div>
                         <Link to={URL.INTRO_SERVICE}>자세히 보기</Link>
                     </div>
                     <div className="b3">
                         <div>
-                            <h2>서비스 신청</h2>
-                            <p>표준프레임워크 경량환경<br />
-                                홈페이지의 다양한 서비스를<br />
+                            <h2>후원 문의</h2>
+                            <p>안산의 아동센터에 <br />
+                                후원을 <br />
                                 신청 하실 수 있습니다.</p>
                         </div>
                         <Link to={URL.SUPPORT_APPLY}>자세히 보기</Link>
                     </div>
                     <div className="b4">
                         <div>
-                            <h2>일정 현황</h2>
-                            <p>표준프레임워크 경량환경<br />
-                                홈페이지의 전체적인 일정<br />
+                            <h2>행사 일정</h2>
+                            <p>아름다운 세상 법인과<br />
+                                아동센터의 전체적인 일정<br />
                                 현황을 조회하실 수 있습니다.</p>
                         </div>
                         <Link to={URL.INFORM}>자세히 보기</Link>

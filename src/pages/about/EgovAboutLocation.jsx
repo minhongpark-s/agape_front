@@ -28,26 +28,27 @@ function EgovAboutLocation() {
 
                         <h1 className="tit_3">사이트 소개</h1>
 
-                        <p className="txt_1">표준프레임워크 경량환경 포털사이트를 소개합니다.</p>
+                        <p className="txt_1">아름다운 세상 협동조합의 개요와 연혁, 조직소개,<br/>
+                                                    거점 기관 및 아동센터들의 약도 등의 정보를 제공하고 있습니다.</p>
 
                         <h2 className="tit_4">찾아오시는길</h2>
 
                         <div className="map">
-                            <a href="https://naver.me/FHYuP0ok" target="_blank" rel="noreferrer">
-                                <img src="/assets/images/map.png" alt="" />
+                            <a href="https://naver.me/xH2jBoZX" target="_blank" rel="noreferrer">
+                                <img src="/assets/images/agape_map_static.png" alt="" />
                             </a>
                         </div>
 
                         <div className="addr">
                             <div className="left_col">
-                                <h3>표준프레임워크센터 주소</h3>
+                                <h3>아름다운 세상 사회적 협동조합 주소</h3>
                                 <dl>
                                     <dt>도로명주소</dt>
-                                    <dd>04513 서울특별시 중구 세종대로 39 대한서울상공회의소 7층</dd>
+                                    <dd>15324 경기 안산시 상록구 일동로 15 2층</dd>
                                 </dl>
                                 <dl>
                                     <dt>지번주소</dt>
-                                    <dd>04513 서울특별시 중구 남대문로4가 45 대한서울상공회의소 7층</dd>
+                                    <dd>15324 일동 121-9 2층</dd>
                                 </dl>
                             </div>
                             <div className="right_col">
@@ -64,23 +65,23 @@ function EgovAboutLocation() {
                             <div className="left_col">
                                 <h3>찾아오시는 길</h3>
                                 <dl>
-                                    <dt>지하철 2호선</dt>
-                                    <dd>시청역 9번 출구 5분거리</dd>
+                                    <dt>지하철 4호선</dt>
+                                    <dd>한대앞역 1번 출구 앞 버스정류장에서 80A, 23, 11, 125번 버스 이용</dd>
                                 </dl>
                                 <dl>
-                                    <dt>지하철 1호선</dt>
-                                    <dd>서울역 3번 출구 5분거리</dd>
+                                    <dt>지하철 4호선</dt>
+                                    <dd>상록수역 2번 출구 건너편 버스정류장에서 99-1, 80B, 23, 21 버스 이용</dd>
                                 </dl>
                             </div>
                             <div className="right_col">
                                 <h3>연락처</h3>
                                 <dl>
                                     <dt className="call">전화</dt>
-                                    <dd>0000-0000</dd>
+                                    <dd>031-417-8122</dd>
                                 </dl>
                                 <dl>
                                     <dt className="email">이메일</dt>
-                                    <dd>egovframeexample@gmail.com</dd>
+                                    <dd>myk0584@daum.net</dd>
                                 </dl>
                             </div>
                         </div>
