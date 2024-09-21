@@ -155,11 +155,14 @@ function EgovAdminGalleryList(props) {
                                         }}>조회</button>
                                     </span>
                                 </li>
-                                {masterBoard.bbsUseFlag === 'Y' &&
-                                    <li>
-                                        <Link to={URL.ADMIN_GALLERY_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link>
-                                    </li>
-                                }
+{/*                                 {masterBoard.bbsUseFlag === 'Y' && */}
+{/*                                     <li> */}
+{/*                                         <Link to={URL.ADMIN_GALLERY_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link> */}
+{/*                                     </li> */}
+{/*                                 } */}
+                                <li>
+                                    <Link to={URL.ADMIN_GALLERY_CREATE} className="btn btn_blue_h46 pd35">갤러리 등록</Link>
+                                </li>
                             </ul>
                         </div>
                         {/* <!--// 검색조건 --> */}

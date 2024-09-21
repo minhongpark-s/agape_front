@@ -243,7 +243,11 @@ function EgovAdminScheduleEdit(props) {
                                 <dt><label htmlFor="schdulDeptName">부서</label><span className="req">필수</span></dt>
                                 <dd>
                                     <input className="f_input2 w_full" type="text" name="schdulDeptName" title="부서" id="schdulDeptName"
-                                        value={scheduleDetail.schdulDeptName} readOnly
+                                           placeholder = "아름다운 세상 협동조합"
+                                           value ="아름다운 세상 협동조합"
+//                                         value={scheduleDetail.schdulDeptName} readOnly
+                                           disabled
+                                           style={{ color: '#888', backgroundColor: '#f0f0f0' }} // 인라인 스타일로 색상 변경
                                     />
                                 </dd>
                             </dl>

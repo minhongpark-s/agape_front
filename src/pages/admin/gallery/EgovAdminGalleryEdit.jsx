@@ -11,6 +11,29 @@ import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavAdmin';
 import EgovAttachFile from 'components/EgovAttachFile';
 import bbsFormVaildator from 'utils/bbsFormVaildator';
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Import Quill's styles
+import './EgovAdminGalleryEdit.css';
+
+const modules = {
+    toolbar: [
+        [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'},
+         {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'video'],
+        ['clean']
+    ],
+};
+
+const formats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image', 'video'
+];
+
 function EgovAdminGalleryEdit(props) {
     console.group("EgovAdminGalleryEdit");
     console.log("------------------------------");
@@ -191,10 +214,18 @@ function EgovAdminGalleryEdit(props) {
                             </dl>
                             <dl>
                                 <dt><label htmlFor="nttCn">내용<span className="req">필수</span></label></dt>
-                                <dd>
-                                    <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder=""
-                                        defaultValue={boardDetail.nttCn}
-                                        onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea>
+                                <dd style={{ height: '400px' }}>
+                                    <ReactQuill
+                                        value={boardDetail.nttCn}
+                                        onChange={(value) => setBoardDetail({ ...boardDetail, nttCn: value })}
+                                        modules={modules}
+                                        formats={formats}
+                                        placeholder= "이곳에 내용을 입력하세요!"
+                                        style={{ height: '100%' }} // 전체 높이 설정
+                                    />
+{/*                                     <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder="" */}
+{/*                                         defaultValue={boardDetail.nttCn} */}
+{/*                                         onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea> */}
                                 </dd>
                             </dl>
                             {/* 답글이 아니고 게시판 파일 첨부 가능 상태에서만 첨부파일 컴포넌트 노출 */}
