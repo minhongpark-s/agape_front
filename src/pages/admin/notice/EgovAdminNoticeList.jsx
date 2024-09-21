@@ -154,11 +154,14 @@ function EgovAdminNoticeList(props) {
                                             }}>조회</button>
                                     </span>
                                 </li>
-                                {masterBoard.bbsUseFlag === 'Y' &&
-                                    <li>
-                                        <Link to={URL.ADMIN_NOTICE_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link>
-                                    </li>
-                                }
+{/*                                 {masterBoard.bbsUseFlag === 'Y' && */}
+{/*                                     <li> */}
+{/*                                         <Link to={URL.ADMIN_NOTICE_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link> */}
+{/*                                     </li> */}
+{/*                                 } */}
+                                <li>
+                                    <Link to={URL.ADMIN_NOTICE_CREATE} className="btn btn_blue_h46 pd35">공지사항 등록</Link>
+                                </li>
                             </ul>
                         </div>
                         {/* <!--// 검색조건 --> */}
