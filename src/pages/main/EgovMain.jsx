@@ -4,10 +4,25 @@ import { Link, useLocation } from 'react-router-dom';
 import * as EgovNet from 'api/egovFetch';
 import URL from 'constants/url';
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function EgovMain(props) {
     console.group("EgovMain");
     console.log("[Start] EgovMain ------------------------------");
     console.log("EgovMain [props] : ", props);
+
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,         // 한번에 1개의 슬라이드를 보여줌
+        centerMode: true,        // 중앙에 슬라이드를 배치하고 좌우에 일부 이미지가 보이도록 설정
+        centerPadding: "15%",    // 양쪽에 25%씩 보이도록 설정
+        autoplay: true,
+        autoplaySpeed: 3000,
+      };
 
     const location = useLocation();
     console.log("EgovMain [location] : ", location);
@@ -99,6 +114,19 @@ function EgovMain(props) {
 
     return (
         <div className="container P_MAIN">
+            <div style={{ width: "100%", height: "600px", overflow: "hidden" }}>
+              <Slider {...settings}>
+                <div>
+                  <img src="/assets/images/slider_images/agape_1.jpeg" alt="Slide 1" style={{ width: "100%", height: "auto", objectFit: "cover" }} />
+                </div>
+                <div>
+                  <img src="/assets/images/slider_images/agape_2.jpeg" alt="Slide 2" style={{ width: "100%", height: "auto", objectFit: "cover" }}/>
+                </div>
+                <div>
+                  <img src="/assets/images/slider_images/agape_3.jpeg" alt="Slide 3" style={{ width: "100%", height: "auto", objectFit: "cover" }}/>
+                </div>
+              </Slider>
+            </div>
             <div className="c_wrap">
                 <div className="colbox">
                     <div className="left_col">
