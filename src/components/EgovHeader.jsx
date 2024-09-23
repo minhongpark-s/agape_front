@@ -61,8 +61,6 @@ function EgovHeader() {
         <div className="header">
             <div className="inner">
                 <h1 className="logo" style={{ maxHeight: '100%', height: 'auto' ,marginTop: '16px'}} >
-{/*                     <Link to={URL.MAIN} className="w"><img src="/assets/images/logo_w.png" alt="표준프레임워크포털 eGovFrame 심플홈페이지" /></Link> */}
-{/*                     <Link to={URL.MAIN} className="m"><img src="/assets/images/logo_m.png" alt="표준프레임워크포털 eGovFrame 심플홈페이지" /></Link> */}
                     <Link to={URL.MAIN} className="w" style={{ maxHeight: '100%', height: 'auto' }} ><img src="/assets/images/bws_logo_created.png" alt="표준프레임워크포털 eGovFrame 심플홈페이지" style={{ maxHeight: '100%', height: 'auto' }}  /></Link>
                 </h1>
 
@@ -71,7 +69,7 @@ function EgovHeader() {
                     <ul>
                         <li><NavLink to={URL.ABOUT} className={({ isActive }) => (isActive ? "cur" : "")}>법인소개</NavLink></li>
                         <li><NavLink to={URL.INTRO} className={({ isActive }) => (isActive ? "cur" : "")}>사업&서비스</NavLink></li>
-                        <li><NavLink to={URL.SUPPORT} className={({ isActive }) => (isActive ? "cur" : "")}>문의</NavLink></li>
+                        <li><NavLink to={URL.SUPPORT} className={({ isActive }) => (isActive ? "cur" : "")}>정보마당</NavLink></li>
                         <li><NavLink to={URL.INFORM} className={({ isActive }) => (isActive ? "cur" : "")}>알림마당</NavLink></li>
                         {sessionUserSe ==='USR' &&
                             <li><NavLink to={URL.ADMIN} className={({ isActive }) => (isActive ? "cur" : "")}>사이트관리</NavLink></li>
@@ -125,9 +123,8 @@ function EgovHeader() {
                     <div className="col">
                         <h3>고객지원</h3>
                         <ul>
-                            <li><NavLink to={URL.SUPPORT_DOWNLOAD} className={({ isActive }) => (isActive ? "cur" : "")}>자료실</NavLink></li>
-                            <li><NavLink to={URL.SUPPORT_QNA} className={({ isActive }) => (isActive ? "cur" : "")}>묻고 답하기</NavLink></li>
-                            <li><NavLink to={URL.SUPPORT_APPLY} className={({ isActive }) => (isActive ? "cur" : "")}>서비스 신청</NavLink></li>
+                            <li><NavLink to={URL.SUPPORT_DOWNLOAD} className={({ isActive }) => (isActive ? "cur" : "")}>운영자료</NavLink></li>
+                            <li><NavLink to={URL.SUPPORT_APPLY} className={({ isActive }) => (isActive ? "cur" : "")}>후원 문의</NavLink></li>
                         </ul>
                     </div>
                     <div className="col">

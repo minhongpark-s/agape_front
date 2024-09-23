@@ -5,9 +5,10 @@ function EgovFooter() {
     return (
         <div className="footer">
             <div className="inner">
-                <h1>
+                <h1 style={{paddingTop: '40px'}}>
                     <Link to="">
-                        <img className="w" src="/assets/images/logo_footer_w.png" alt="" />
+{/*                         <img className="w" src="/assets/images/logo_footer_w.png" alt="" /> */}
+                        <img className="w" src="/assets/images/bws_logo_created.png" alt="" />
                         <img className="m" src="/assets/images/logo_footer_m.png" alt="" />
                     </Link>
                 </h1>
