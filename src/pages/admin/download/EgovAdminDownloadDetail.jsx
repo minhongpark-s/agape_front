@@ -6,18 +6,18 @@ import * as EgovNet from 'api/egovFetch';
 import URL from 'constants/url';
 import CODE from 'constants/code';
 import { DOWNLOAD_BBS_ID } from 'config';
-import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavSupport';
+import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavAdmin';
 import EgovAttachFile from 'components/EgovAttachFile';
 
-function EgovDownloadDetail(props) {
+function EgovAdminDownloadDetail(props) {
 
-    console.group("EgovSupportDownloadDetail");
+    console.group("EgovAdminDownloadDetail");
     console.log("------------------------------");
-    console.log("EgovSupportDownloadDetail [props] : ", props);
+    console.log("EgovAdminDownloadDetail [props] : ", props);
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("EgovSupportDownloadDetail [location] : ", location);
+    console.log("EgovAdminDownloadDetail [location] : ", location);
 
     const bbsId = location.state.bbsId || DOWNLOAD_BBS_ID;
     const nttId = location.state.nttId;
@@ -63,7 +63,7 @@ function EgovDownloadDetail(props) {
                 console.log("====>>> board delete= ", resp);
                 if (Number(resp.resultCode) === Number(CODE.RCV_SUCCESS)) {
                     alert("게시글이 삭제되었습니다.")
-                    navigate(URL.SUPPORT_DOWNLOAD ,{ replace: true });
+                    navigate(URL.ADMIN_DOWNLOAD ,{ replace: true });
                 } else {
                     navigate({pathname: URL.ERROR}, {state: {msg : resp.resultMessage}});
                 }
@@ -138,10 +138,24 @@ function EgovDownloadDetail(props) {
 
 
                             <div className="board_btn_area">
+                                {user.id && masterBoard.bbsUseFlag === 'Y' &&
+                                    <div className="left_col btn3">
+                                        <Link to={{pathname: URL.ADMIN_DOWNLOAD_MODIFY}}
+                                            state={{
+                                                nttId: nttId,
+                                                bbsId: bbsId
+                                            }}
+                                            className="btn btn_skyblue_h46 w_100">수정</Link>
+                                        <button className="btn btn_skyblue_h46 w_100" onClick={(e) => {
+                                            e.preventDefault();
+                                            onClickDeleteBoardArticle(boardDetail.bbsId, boardDetail.nttId);
+                                        }}>삭제</button>
 
+                                    </div>
+                                }
 
                                 <div className="right_col btn1">
-                                    <Link to={{pathname: URL.SUPPORT_DOWNLOAD}}
+                                    <Link to={{pathname: URL.ADMIN_DOWNLOAD}}
                                         state={{
                                             nttId: nttId,
                                             bbsId: bbsId,
@@ -163,4 +177,4 @@ function EgovDownloadDetail(props) {
     );
 }
 
-export default EgovDownloadDetail;
+export default EgovAdminDownloadDetail;

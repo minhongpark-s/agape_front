@@ -2,3 +2,7 @@ export const SERVER_URL = "http://"+process.env.REACT_APP_EGOV_CONTEXT_URL; // R
 export const DEFAULT_BBS_ID = "BBSMSTR_AAAAAAAAAAAA"; // default = 공지사항 게시판 아이디
 export const NOTICE_BBS_ID = "BBSMSTR_AAAAAAAAAAAA"; // 공지사항 게시판 아이디
 export const GALLERY_BBS_ID = "BBSMSTR_BBBBBBBBBBBB"; // 갤러리 게시판 아이디
+
+
+// 240923 자료실 게시판 아이디 추가
+export const DOWNLOAD_BBS_ID = "BBSMSTR_CCCCCCCCCCCC"; // 자료실 게시판 아이디

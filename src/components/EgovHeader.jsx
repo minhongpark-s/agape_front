@@ -68,7 +68,7 @@ function EgovHeader() {
                     <h2 className="blind">주메뉴</h2>
                     <ul>
                         <li><NavLink to={URL.ABOUT} className={({ isActive }) => (isActive ? "cur" : "")}>법인소개</NavLink></li>
-                        <li><NavLink to={URL.INTRO} className={({ isActive }) => (isActive ? "cur" : "")}>사업&서비스</NavLink></li>
+                        <li><NavLink to={URL.INTRO} className={({ isActive }) => (isActive ? "cur" : "")}>사업 및 기관소개</NavLink></li>
                         <li><NavLink to={URL.SUPPORT} className={({ isActive }) => (isActive ? "cur" : "")}>정보마당</NavLink></li>
                         <li><NavLink to={URL.INFORM} className={({ isActive }) => (isActive ? "cur" : "")}>알림마당</NavLink></li>
                         {sessionUserSe ==='USR' &&
@@ -117,7 +117,7 @@ function EgovHeader() {
                         <h3>정보마당</h3>
                         <ul>
                             <li><NavLink to={URL.INTRO_WORKS} className={({ isActive }) => (isActive ? "cur" : "")}>주요사업 소개</NavLink></li>
-                            <li><NavLink to={URL.INTRO_SERVICE} className={({ isActive }) => (isActive ? "cur" : "")}>대표서비스 소개</NavLink></li>
+                            <li><NavLink to={URL.INTRO_SERVICE} className={({ isActive }) => (isActive ? "cur" : "")}>기관 소개</NavLink></li>
                         </ul>
                     </div>
                     <div className="col">

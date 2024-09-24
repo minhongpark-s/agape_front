@@ -6,19 +6,42 @@ import URL from 'constants/url';
 import CODE from 'constants/code';
 import { DOWNLOAD_BBS_ID } from 'config';
 
-import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavSupport';
+import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavAdmin';
 import EgovAttachFile from 'components/EgovAttachFile';
 import bbsFormVaildator from 'utils/bbsFormVaildator';
 
-function EgovDownloadCreate(props) {
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Import Quill's styles
+import './EgovAdminDownloadEdit.css';
 
-    console.group("EgovSupportDownloadCreate");
+const modules = {
+    toolbar: [
+        [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'},
+         {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'video'],
+        ['clean']
+    ],
+};
+
+const formats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image', 'video'
+];
+
+function EgovAdminDownloadCreate(props) {
+
+    console.group("EgovAdminDownloadCreate");
     console.log("------------------------------");
-    console.log("EgovSupportDownloadCreate [props] : ", props);
+    console.log("EgovAdminDownloadCreate [props] : ", props);
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("EgovSupportDownloadCreate [location] : ", location);
+    console.log("EgovAdminDownloadCreate [location] : ", location);
 
     const bbsId = location.state?.bbsId || DOWNLOAD_BBS_ID;
     const nttId = location.state?.nttId || "";
@@ -154,7 +177,7 @@ function EgovDownloadCreate(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.groupEnd("EgovNoticeEdit");
+    console.groupEnd("EgovAdminDownloadCreate");
 
 
 
@@ -201,10 +224,18 @@ function EgovDownloadCreate(props) {
                             </dl>
                             <dl>
                                 <dt><label htmlFor="nttCn">내용<span className="req">필수</span></label></dt>
-                                <dd>
-                                    <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder=""
-                                        defaultValue={boardDetail.nttCn}
-                                        onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea>
+                                <dd style={{ height: '400px' }}>
+                                    <ReactQuill
+                                        value={boardDetail.nttCn}
+                                        onChange={(value) => setBoardDetail({ ...boardDetail, nttCn: value })}
+                                        modules={modules}
+                                        formats={formats}
+                                        placeholder= "이곳에 내용을 입력하세요!"
+                                        style={{ height: '100%' }} // 전체 높이 설정
+                                    />
+    {/*                                     <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder="" */}
+    {/*                                         defaultValue={boardDetail.nttCn} */}
+    {/*                                         onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea> */}
                                 </dd>
                             </dl>
                             {/* 답글이 아니고 게시판 파일 첨부 가능 상태에서만 첨부파일 컴포넌트 노출 */}
@@ -235,7 +266,7 @@ function EgovDownloadCreate(props) {
                                 </div>
 
                                 <div className="right_col btn1">
-                                    <Link to={URL.SUPPORT_DOWNLOAD} className="btn btn_blue_h46 w_100">목록</Link>
+                                    <Link to={URL.ADMIN_DOWNLOAD} className="btn btn_blue_h46 w_100">목록</Link>
                                 </div>
                             </div>
                             {/* <!--// 버튼영역 --> */}
@@ -249,4 +280,4 @@ function EgovDownloadCreate(props) {
     );
 }
 
-export default EgovDownloadCreate;
+export default EgovAdminDownloadCreate;

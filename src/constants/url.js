@@ -23,12 +23,14 @@ const URL = {
     SUPPORT_DOWNLOAD            : "/support/download", // 고객지원/자료실
     SUPPORT_DOWNLOAD_DETAIL     : "/support/download/detail", // 고객지원/자료실/상세
     SUPPORT_DOWNLOAD_CREATE     : "/support/download/create", // 고객지원/자료실/등록
+    SUPPORT_DOWNLOAD_MODIFY     : "/support/download/modify", // 고객지원/자료실/수정
+
     SUPPORT_QNA                 : "/support/qna", // 고객지원/묻고답하기
     SUPPORT_QNA_DETAIL          : "/support/qna/detail", // 고객지원/묻고답하기/상세
     SUPPORT_APPLY               : "/support/apply", // 고객지원/서비스신청
-    
+
     //INFORM
-    INFORM                      : "/inform", // 알림마당 
+    INFORM                      : "/inform", // 알림마당
     INFORM_DAILY                : "/inform/daily", // 알림마당/오늘의행사
     INFORM_DAILY_DETAIL         : "/inform/daily/detail", // 알림마당/오늘의행사상세
     INFORM_WEEKLY               : "/inform/weekly", // 알림마당/금주의행사
@@ -43,7 +45,7 @@ const URL = {
     INFORM_GALLERY_CREATE       : "/inform/gallery/create", // 알림마당/사이트갤러리등록
     INFORM_GALLERY_MODIFY       : "/inform/gallery/modify", // 알림마당/사이트갤러리수정
     INFORM_GALLERY_REPLY        : "/inform/gallery/reply", // 알림마당/사이트갤러리답글
-    
+
     //ADMIN
     ADMIN                       : "/admin", // 사이트관리
     ADMIN_SCHEDULE              : "/admin/schedule", // 사이트관리/일정관리
@@ -72,6 +74,12 @@ const URL = {
     ADMIN_GALLERY_CREATE        : "/admin/gallery/create", // 사이트관리/사이트갤러리관리 등록
     ADMIN_GALLERY_MODIFY        : "/admin/gallery/modify", // 사이트관리/사이트갤러리관리 수정
     ADMIN_GALLERY_REPLY         : "/admin/gallery/reply", // 사이트관리/사이트갤러리관리 답글 등록
+
+    ADMIN_DOWNLOAD              : "/admin/download", // 사이트관리/자료실관리
+    ADMIN_DOWNLOAD_DETAIL       : "/admin/download/detail", //사이트관리/자료실관리 상세
+    ADMIN_DOWNLOAD_CREATE       : "/admin/download/create", // 사이트관리/자료실관리 등록
+    ADMIN_DOWNLOAD_MODIFY       : "/admin/download/modify", // 사이트관리/자료실관리 수정
+    ADMIN_DOWNLOAD_REPLY        : "/admin/gallery/reply", // 사이트관리/자료실관리 답글 등록
     
 	ADMIN_MANAGER               : "/admin/manager/", // 사이트관리/사이트관리자 암호변경 기능
 }

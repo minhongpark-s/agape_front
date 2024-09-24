@@ -24,9 +24,9 @@ function EgovIntroWork() {
                     <div className="contents BUSINESS_INTRO" id="contents">
                         {/* <!-- 본문 --> */}
 
-                        <h1 className="tit_3">정보마당</h1>
+                        <h1 className="tit_3">사업 및 기관소개</h1>
 
-                        <p className="txt_1">대표제품의 소개와 대표서비스의 소개를 보실 수 있는 페이지입니다.</p>
+                        <p className="txt_1">아름다운 세상 협동 조합의 주요사업과 하위 기관들이 소개된 페이지입니다.</p>
                         
                         <h2 className="tit_4">일반 사업 소개</h2>
 

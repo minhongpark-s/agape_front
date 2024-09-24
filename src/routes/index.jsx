@@ -62,6 +62,13 @@ import EgovAdminNoticeEdit from 'pages/admin/notice/EgovAdminNoticeEdit';
 import EgovAdminGalleryList from 'pages/admin/gallery/EgovAdminGalleryList';
 import EgovAdminGalleryDetail from 'pages/admin/gallery/EgovAdminGalleryDetail';
 import EgovAdminGalleryEdit from 'pages/admin/gallery/EgovAdminGalleryEdit';
+
+//자료실 게시판 추가 240903
+import EgovAdminDownloadList from 'pages/admin/download/EgovAdminDownloadList';
+import EgovAdminDownloadDetail from 'pages/admin/download/EgovAdminDownloadDetail';
+import EgovAdminDownloadCreate from 'pages/admin/download/EgovAdminDownloadCreate';
+
+
 //사이트관리자 암호 바꾸기 기능 추가 2023.04.15(토) 김일국 추가
 import EgovAdminPasswordUpdate from 'pages/admin/manager/EgovAdminPasswordUpdate';
 import * as EgovNet from 'api/egovFetch'; // jwt토큰 위조 검사 때문에 추가
@@ -109,7 +116,7 @@ const RootRoutes = () => {
 	}
   },[jwtAuthentication, location, mounted]); // location 경로와 페이지 마운트상태가 변경 될 때 업데이트 후 리렌더링
 
-  if(mounted) { // 인증 없이 시스템관리 URL로 접근할 때 렌더링 되는 것을 방지하는 조건추가. 
+  if(mounted) { // 인증 없이 시스템관리 URL로 접근할 때 렌더링 되는 것을 방지하는 조건추가.
 	  return (
 	      <Routes>
 	        <Route path={URL.ERROR} element={<EgovError />} />
@@ -132,7 +139,7 @@ const SecondRoutes = () => {
 		initPage();
 	}
   },[]);
-  
+
   return (
     <>
       <EgovHeader />
@@ -165,7 +172,8 @@ const SecondRoutes = () => {
 
         <Route path={URL.SUPPORT_DOWNLOAD} element={<EgovSupportDownloadList />} />
         <Route path={URL.SUPPORT_DOWNLOAD_DETAIL} element={<EgovSupportDownloadDetail />} />
-        <Route path={URL.SUPPORT_DOWNLOAD_CREATE} element={<EgovSupportDownloadCreate />} />
+        <Route path={URL.SUPPORT_DOWNLOAD_CREATE} element={<EgovSupportDownloadCreate mode={CODE.MODE_CREATE}/>} />
+        <Route path={URL.SUPPORT_DOWNLOAD_MODIFY} element={<EgovSupportDownloadCreate mode={CODE.MODE_MODIFY}/>} />
 
         <Route path={URL.SUPPORT_QNA} element={<EgovSupportQnaList />} />
         <Route path={URL.SUPPORT_QNA_DETAIL} element={<EgovSupportQnaDetail />} />
@@ -218,7 +226,17 @@ const SecondRoutes = () => {
         <Route path={URL.ADMIN_GALLERY_CREATE} element={<EgovAdminGalleryEdit mode={CODE.MODE_CREATE} />} />
         <Route path={URL.ADMIN_GALLERY_MODIFY} element={<EgovAdminGalleryEdit mode={CODE.MODE_MODIFY} />} />
         <Route path={URL.ADMIN_GALLERY_REPLY} element={<EgovAdminGalleryEdit mode={CODE.MODE_REPLY} />} />
-		{/* 사이트관리자 암호 바꾸기 기능 */}
+
+        {/* 자료실 게시판 추가 240903 */}
+        <Route path={URL.ADMIN_DOWNLOAD} element={<EgovAdminDownloadList />} />
+        <Route path={URL.ADMIN_DOWNLOAD_DETAIL} element={<EgovAdminDownloadDetail />} />
+        <Route path={URL.ADMIN_DOWNLOAD_CREATE} element={<EgovAdminDownloadCreate mode={CODE.MODE_CREATE} />} />
+        <Route path={URL.ADMIN_DOWNLOAD_MODIFY} element={<EgovAdminDownloadCreate mode={CODE.MODE_MODIFY} />} />
+        <Route path={URL.ADMIN_DOWNLOAD_REPLY} element={<EgovAdminDownloadCreate mode={CODE.MODE_REPLY} />} />
+
+
+
+    {/* 사이트관리자 암호 바꾸기 기능 */}
 		<Route path={URL.ADMIN_MANAGER} element={<EgovAdminPasswordUpdate />} />
       </Routes>
       <EgovFooter />

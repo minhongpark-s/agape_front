@@ -5,19 +5,19 @@ import * as EgovNet from 'api/egovFetch';
 import URL from 'constants/url';
 import { DOWNLOAD_BBS_ID } from 'config';
 
-import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavSupport';
+import { default as EgovLeftNav } from 'components/leftmenu/EgovLeftNavAdmin';
 import EgovPaging from 'components/EgovPaging';
 
 import { itemIdxByPage } from 'utils/calc';
 
-function EgovDownloadList(props) {
+function EgovAdminDownloadList(props) {
 
-    console.group("EgovSupportDownloadList");
-    console.log("[Start] EgovSupportDownloadList ------------------------------");
-    console.log("EgovSupportDownloadList [props] : ", props);
+    console.group("EgovAdminDownloadList");
+    console.log("[Start] EgovAdminDownloadList ------------------------------");
+    console.log("EgovAdminDownloadList [props] : ", props);
 
     const location = useLocation();
-    console.log("EgovSupportDownloadList [location] : ", location);
+    console.log("EgovAdminDownloadList [location] : ", location);
 
 	const cndRef = useRef();
     const wrdRef = useRef();
@@ -33,7 +33,7 @@ function EgovDownloadList(props) {
     const [listTag, setListTag] = useState([]);
 
     const retrieveList = useCallback((searchCondition) => {
-        console.groupCollapsed("EgovSupportDownloadList.retrieveList()");
+        console.groupCollapsed("EgovAdminDownloadList.retrieveList()");
 
         const retrieveListURL = '/board'+EgovNet.getQueryString(searchCondition);;
         const requestOptions = {
@@ -64,7 +64,7 @@ function EgovDownloadList(props) {
 
                     mutListTag.push(
                         <Link
-                            to={{pathname: URL.SUPPORT_DOWNLOAD_DETAIL}}
+                            to={{pathname: URL.ADMIN_DOWNLOAD_DETAIL}}
                             state={{
                                 nttId: item.nttId,
                                 bbsId: item.bbsId,
@@ -96,7 +96,7 @@ function EgovDownloadList(props) {
                 console.log("err response : ", resp);
             }
         );
-        console.groupEnd("EgovSupportDownloadList.retrieveList()");
+        console.groupEnd("EgovAdminDownloadList.retrieveList()");
     },[]);
 
     useEffect(() => {
@@ -104,8 +104,8 @@ function EgovDownloadList(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    console.log("------------------------------EgovSupportDownloadList [End]");
-    console.groupEnd("EgovSupportDownloadList");
+    console.log("------------------------------EgovAdminDownloadList [End]");
+    console.groupEnd("EgovAdminDownloadList");
 
 
 
@@ -165,26 +165,26 @@ function EgovDownloadList(props) {
                                             }}>조회</button>
                                     </span>
                                 </li>
-                                {/* <!--// 일반 사용자 페이지 등록 버튼 삭제
-
-                                {user.id && masterBoard.bbsUseFlag === 'Y' &&
-                                    <li>
-                                        <Link to={URL.SUPPORT_DOWNLOAD_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link>
-                                    </li>
-                                }
-                                     --> */}
+{/*                                 {user.id && masterBoard.bbsUseFlag === 'Y' && */}
+{/*                                     <li> */}
+{/*                                         <Link to={URL.ADMIN_DOWNLOAD_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link> */}
+{/*                                     </li> */}
+{/*                                 } */}
+                                <li>
+                                    <Link to={URL.ADMIN_DOWNLOAD_CREATE} className="btn btn_blue_h46 pd35">다운로드 등록</Link>
+                                </li>
                             </ul>
                         </div>
                         {/* <!--// 검색조건 --> */}
 
                         {/* <!-- 게시판목록 --> */}
                         <div className="board_list BRD003">
-                            <div className="head">
+                            <div className="head" style={{ display: 'flex' }}>
                                 <span>번호</span>
-                                <span>제목</span>
+                                <span style={{ width: '50%' }}>제목</span>
                                 <span>작성자</span>
                                 <span>작성일</span>
-                                <span>조회수</span>
+                                <span style={{ width: '10%' }}>조회수</span>
                             </div>
                             <div className="result">
                                 {listTag}
@@ -208,4 +208,4 @@ function EgovDownloadList(props) {
     );
 }
 
-export default EgovDownloadList;
+export default EgovAdminDownloadList;
