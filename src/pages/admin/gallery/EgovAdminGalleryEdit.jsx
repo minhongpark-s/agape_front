@@ -215,17 +215,17 @@ function EgovAdminGalleryEdit(props) {
                             <dl>
                                 <dt><label htmlFor="nttCn">내용<span className="req">필수</span></label></dt>
                                 <dd style={{ height: '400px' }}>
-                                    <ReactQuill
-                                        value={boardDetail.nttCn}
-                                        onChange={(value) => setBoardDetail({ ...boardDetail, nttCn: value })}
-                                        modules={modules}
-                                        formats={formats}
-                                        placeholder= "이곳에 내용을 입력하세요!"
-                                        style={{ height: '100%' }} // 전체 높이 설정
-                                    />
-{/*                                     <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder="" */}
-{/*                                         defaultValue={boardDetail.nttCn} */}
-{/*                                         onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea> */}
+{/*                                     <ReactQuill */}
+{/*                                         value={boardDetail.nttCn} */}
+{/*                                         onChange={(value) => setBoardDetail({ ...boardDetail, nttCn: value })} */}
+{/*                                         modules={modules} */}
+{/*                                         formats={formats} */}
+{/*                                         placeholder= "이곳에 내용을 입력하세요!" */}
+{/*                                         style={{ height: '100%' }} // 전체 높이 설정 */}
+{/*                                     /> */}
+                                    <textarea className="f_txtar w_full h_200" id="nttCn" name="nttCn" cols="30" rows="10" placeholder=""
+                                        defaultValue={boardDetail.nttCn}
+                                        onChange={e => setBoardDetail({ ...boardDetail, nttCn: e.target.value })}></textarea>
                                 </dd>
                             </dl>
                             {/* 답글이 아니고 게시판 파일 첨부 가능 상태에서만 첨부파일 컴포넌트 노출 */}

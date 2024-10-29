@@ -123,14 +123,14 @@ function EgovMain(props) {
                   <img src="/assets/images/slider_images/agape_2.jpeg" alt="Slide 2" style={{ width: "100%", height: "auto", objectFit: "cover" }}/>
                 </div>
                 <div>
-                  <img src="/assets/images/slider_images/agape_3.jpeg" alt="Slide 3" style={{ width: "100%", height: "auto", objectFit: "cover" }}/>
+                  <img src="/assets/images/slider_images/agape_main_3.jpeg" alt="Slide 3" style={{ width: "100%", height: "auto", objectFit: "cover" }}/>
                 </div>
               </Slider>
             </div>
             <div className="c_wrap">
                 <div className="colbox">
                     <div className="left_col">
-                        <img src="/assets/images/agape_main_picture_1.jpeg" alt="아름다운 세상 법인 아이들 사진." />
+                        <img src="/assets/images/agape_main_square.jpeg" alt="아름다운 세상 법인 아이들 사진." />
                     </div>
 
                     <div className="right_col">
