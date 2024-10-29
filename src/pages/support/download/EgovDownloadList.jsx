@@ -182,7 +182,7 @@ function EgovDownloadList(props) {
                             <div className="head">
                                 <span>번호</span>
                                 <span>제목</span>
-                                <span>작성자</span>
+                                <span style={{ width: '20%' }}>작성자</span>
                                 <span>작성일</span>
                                 <span>조회수</span>
                             </div>
